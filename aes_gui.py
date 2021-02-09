@@ -22,5 +22,20 @@ label_2.place(x=80, y=180)
 entry_2 = Entry(root, width=30)
 entry_2.place(x=240, y=180)
 
+myButton1 = Button(root, text='128-bit key Encryption', width=20, bg='grey', fg='black')
+myButton1.place(x=240, y=230)
+myButton1.bind("<Button-1>", shenoFjalen1)
+
+label_3 = Label(root, text="128-bit Encrypted Text: ", width=20, font=("bold", 10))
+label_3.place(x=80, y=280)
+entry_3 = Entry(root, width=30)
+entry_3.place(x=240, y=280)
+
+
+myButton2 = Button(root, text='192-bit key Encryption', width=20, bg='grey', fg='black')
+myButton2.place(x=240, y=330)
+myButton2.bind("<Button-1>", shenoFjalen2)
+
+
 
 root.mainloop()
