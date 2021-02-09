@@ -6,6 +6,28 @@ root = Tk()
 root.geometry('500x500')
 root.title("Registration Form")
 
+BLOCK_SIZE = 16
+PADDING = '\0'
+pad_it = lambda s: s+(16 - len(s)%16)*PADDING
+
+
+iv = b'1234567890123456'
+
+
+def encrypt_aes(sourceStr, key):
+    b = bytes(key, 'utf-8')
+    generator = AES.new(b, AES.MODE_CFB, iv)
+    crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+    cryptedStr = base64.b64encode(crypt)
+    return cryptedStr
+
+def shenoFjalen1(event):
+    entry_3.insert(0, encrypt_aes(entry_1.get(), entry_2.get()))
+
+def shenoFjalen2(event):
+    entry_3.insert(0, "Encrypted Text with 192-bit key")
+
+
 label_0 = Label(root, text="AES Encryption", width=20, font=("bold", 20))
 label_0.place(x=90, y=53)
 
