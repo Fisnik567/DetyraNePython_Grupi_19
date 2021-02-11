@@ -54,6 +54,36 @@ label1.grid(column=0, row=0)
 
 label2 = Label(tab1, text="EBC Mode Aes Encryption", padx=5, pady=5)
 label2.grid(column=0, row=0)
+                
+#CFB MODE
+l1 = Label(tab2, text="Text to be encrypted: ", padx=15, pady=5)
+l1.grid(column=0, row=1)
+
+# fname_raw_entry = StringVar()
+entry_text1 = Entry(tab2, width=50)
+entry_text1.grid(row=1, column=1)
+
+l2 = Label(tab2, text="Type the secret key: ", padx=5, pady=5)
+l2.grid(column=0, row=2)
+fname_raw_entry = StringVar()
+entry_text2 = Entry(tab2, width=50)
+entry_text2.grid(row=2, column=1)
+
+button1 = Button(tab2, text="128-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
+button1.grid(row=3, column=0, padx=5, pady=30)
+button1.bind("<Button-1>", shenoFjalen1)
+button1.configure(height=1, width=15)
+
+button2 = Button(tab2, text="Clear", width=12, bg="#03A9F4", fg = "#fff")
+button2.grid(row=3, column=1, padx=5, pady=30)
+
+#Encrypted Text
+
+lDisplay = Label(tab2, text="Encrypted Text: ", padx=5, pady=5)
+lDisplay.grid(column=0, row=4)
+
+entry_text3 = Entry(tab2, width=50)
+entry_text3.grid(row=4, column=1)
 
 
 window.mainloop()
