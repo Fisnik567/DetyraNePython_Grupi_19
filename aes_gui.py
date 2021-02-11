@@ -1,10 +1,11 @@
 from Cryptodome.Cipher import AES
 import base64
+from tkinter import ttk
 from tkinter import *
 
-root = Tk()
-root.geometry('500x500')
-root.title("Registration Form")
+window = Tk()
+window.title('Aes Encryption')
+window.geometry("750x450")
 
 BLOCK_SIZE = 16
 PADDING = '\0'
@@ -28,36 +29,31 @@ def shenoFjalen2(event):
     entry_3.insert(0, "Encrypted Text with 192-bit key")
 
 
-label_0 = Label(root, text="AES Encryption", width=20, font=("bold", 20))
-label_0.place(x=90, y=53)
+style = ttk.Style(window)
+style.configure("leftab.TNotebook", tabposition='wn')
 
+tab_control = ttk.Notebook(window, style='lefttab.TNotebook')
 
-label_1 = Label(root, text="Enter text to be Encrypted: ", width=20, font=("bold", 10))
-label_1.place(x=80, y=130)
+#TAB1
+tab1 = ttk.Frame(tab_control)
 
-entry_1 = Entry(root, width=30)
-entry_1.place(x=240, y=130)
+#TAB2
+tab2 = ttk.Frame(tab_control)
+tab3 = ttk.Frame(tab_control)
 
-label_2 = Label(root, text="Write secret key: ", width=20, font=("bold", 10))
-label_2.place(x=80, y=180)
+tab_control.add(tab1, text=f'{"CFB 192-bit encryption":^20s}')
+tab_control.add(tab2, text=f'{"CFB 128-bit encryption":^20s}')
+tab_control.add(tab3, text=f'{"CFB 256-bit encryption":^20s}')
 
-entry_2 = Entry(root, width=30)
-entry_2.place(x=240, y=180)
-
-myButton1 = Button(root, text='128-bit key Encryption', width=20, bg='grey', fg='black')
-myButton1.place(x=240, y=230)
-myButton1.bind("<Button-1>", shenoFjalen1)
-
-label_3 = Label(root, text="128-bit Encrypted Text: ", width=20, font=("bold", 10))
-label_3.place(x=80, y=280)
-entry_3 = Entry(root, width=30)
-entry_3.place(x=240, y=280)
-
-
-myButton2 = Button(root, text='192-bit key Encryption', width=20, bg='grey', fg='black')
-myButton2.place(x=240, y=330)
-myButton2.bind("<Button-1>", shenoFjalen2)
+tab_control.pack(expand=1, fill="both")
 
 
 
-root.mainloop()
+label1 = Label(tab2, text="CFB Mode Aes Encryption", padx=15, pady=5)
+label1.grid(column=0, row=0)
+
+label2 = Label(tab1, text="EBC Mode Aes Encryption", padx=5, pady=5)
+label2.grid(column=0, row=0)
+
+
+window.mainloop()
