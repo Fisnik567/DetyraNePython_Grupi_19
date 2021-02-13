@@ -10,17 +10,55 @@ window.geometry("750x450")
 BLOCK_SIZE = 16
 PADDING = '\0'
 pad_it = lambda s: s+(16 - len(s)%16)*PADDING
-
-
 iv = b'1234567890123456'
 
+#Enkriptimi me CFB Mode(128-bit key length)
+def encrypt_aesCFB128(sourceStr, key):
+    if len(key) == 16:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_CFB, iv)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = "Key length should be 16!"
+        return gabim
 
-def encrypt_aes(sourceStr, key):
-    b = bytes(key, 'utf-8')
-    generator = AES.new(b, AES.MODE_CFB, iv)
-    crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
-    cryptedStr = base64.b64encode(crypt)
-    return cryptedStr
+#Enkriptimi ne EBC MODE(128-bit key length)
+def encrypt_aesECB128(sourceStr, key):
+    if len(key) == 16:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_ECB)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = 'Key length should be 16!'
+        return gabim
+
+#Enkriptimi ne CFB MODE(192-bit key length)
+def encrypt_aesCFB192(sourceStr, key):
+    if len(key) == 24:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_CFB, iv)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = "Key length should be 24!"
+        return gabim
+
+#Enkriptimi ne EBC MODE(192-bit key length)
+def encrypt_aesECB192(sourceStr, key):
+    if len(key) == 24:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_ECB)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = "Key length should be 24!"
+        return gabim    
 
 def shenoFjalen1(event):
     entry_3.insert(0, encrypt_aes(entry_1.get(), entry_2.get()))
