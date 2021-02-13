@@ -142,10 +142,10 @@ tab_control.pack(expand=1, fill="both")
 
 
 
-label1 = Label(tab2, text="AES Encryption(128-bit key length)", padx=15, pady=5)
+label1 = Label(tab1, text="AES Encryption(128-bit key length)", padx=15, pady=5)
 label1.grid(column=0, row=0)
 
-label2 = Label(tab1, text="AES Encryption(192-bit key length)", padx=5, pady=5)
+label2 = Label(tab2, text="AES Encryption(192-bit key length)", padx=5, pady=5)
 label2.grid(column=0, row=0)
 
 label3 = Label(tab3, text="AES Encryption(256-bit key length)", padx=15, pady=5)
