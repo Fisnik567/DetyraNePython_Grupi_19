@@ -18,3 +18,9 @@ AES-128 perdor 128-bit gjatesi te celesit, AES-192 perdor 192 bit, derisa AES-25
 
 Aplikacioni yne eshte zhvilluar ne gjuhen programuese __*Python*__, dhe eshte punuar si __*GUI(Graphical User Interface)*__ duke perdorur modulin __*tkinter*__.
 Kodi burimor gjendet ne fajllin aes_gui.py – ku edhe jane shqyrtuar rastet e enkriptimit me AES. Pershkrimi i punes dhe ekzkutimi i ketyre enkriptimeve eshte bere me poshte. 
+
+**Modet qe ne kemi shqyrtuar dhe implementuar jane ECB Mode dhe CFB Mode.**
+
+__*Electronic Code Book*__ përdor tekniken me te thjeshtë, duke e bërë atë një nga algoritmat më të lehtë dhe më të shpejtë për t’u zbatuar. Teksti i hyrjes(plaintext) ndahet në një numër blloqesh dhe secili enkriptohet individualisht duke përdorur çelësin. Enkriptimi i të njëjtit bllok dy herë do të rezultojë në kthimin e të njëjtit tekst dales(ciphertext) dy herë.
+
+__*Cipher FeedBack*__ eshte nje nga metodat e enkriptimit te ciles i nevojitet nje vektor inicializues(IV) per te kryer procesin e enkriptimit. Së pari, CFB do të enkriptojë IV, pastaj do të xor me bllokun e pare te teksit hyres(plaintext) për të marrë tekstin e enkriptuar. Ky rezultat I enkriptimit behet perseri  xor me bllokun e dyte te plaintext.Kjo mënyrë do te vazhdoje derisa te perfshihet I gjithe teksti hyres.Eshte metode me e sigurte se EBC sepse sulmuesit nuk mund ti krahasojne ciphertex-et.
