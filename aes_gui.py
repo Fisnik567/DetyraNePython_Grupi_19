@@ -200,6 +200,19 @@ l22.grid(column=0, row=2)
 entry_text22 = Entry(tab2, width=50)
 entry_text22.grid(row=2, column=1)
 
+buttonECB11 = Button(tab2, text="ECB 192-bit Encryption", width=2, bg="#03A9F4", fg = "#fff")
+buttonECB11.place(x=50,y=100)
+buttonECB11.bind("<Button-1>", shenoFjalen3)
+buttonECB11.configure(height=1, width=18)
+
+buttonCFB11 = Button(tab2, text="CFB 192-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
+buttonCFB11.place(x=50,y=135)
+buttonCFB11.bind("<Button-1>", shenoFjalen4)
+buttonCFB11.configure(height=1, width=18)
+
+buttonCLEAR11 = Button(tab2, text="Clear", width=12, bg="#03A9F4", fg="#fff")
+buttonCLEAR11.bind("<Button-1>", delete2)
+buttonCLEAR11.place(x=500,y=200)
 
 
 window.mainloop()
