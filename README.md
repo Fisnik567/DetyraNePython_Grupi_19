@@ -1,6 +1,6 @@
 # DetyraNePython_Grupi_19
 
-## AES
+## AES - Advanced Encryption Standard
 
 AES eshte nje block cipher simetrik, i perdorur nga qeveria Amerikane per te mbrojtur informacione te klasifikuara. Block cipher eshte nje metode enkriptimi qe perdor nje algoritem te caktuar, i cili perdor nje celes simetrik per te enkriptuar nje bllok teksti.AES, enkripton 128 bit blloqe me nje celes, me gjatesi te paracaktuar: 128, 192 apo 256 bita. Kemi tre menyre per enkriptim me AES: AES-128, AES-192 and AES-256. <br/>
 
@@ -23,4 +23,38 @@ Kodi burimor gjendet ne fajllin aes_gui.py – ku edhe jane shqyrtuar rastet e e
 
 __*Electronic Code Book*__ përdor tekniken me te thjeshtë, duke e bërë atë një nga algoritmat më të lehtë dhe më të shpejtë për t’u zbatuar. Teksti i hyrjes(plaintext) ndahet në një numër blloqesh dhe secili enkriptohet individualisht duke përdorur çelësin. Enkriptimi i të njëjtit bllok dy herë do të rezultojë në kthimin e të njëjtit tekst dales(ciphertext) dy herë.
 
-__*Cipher FeedBack*__ eshte nje nga metodat e enkriptimit te ciles i nevojitet nje vektor inicializues(IV) per te kryer procesin e enkriptimit. Së pari, CFB do të enkriptojë IV, pastaj do të xor me bllokun e pare te teksit hyres(plaintext) për të marrë tekstin e enkriptuar. Ky rezultat I enkriptimit behet perseri  xor me bllokun e dyte te plaintext.Kjo mënyrë do te vazhdoje derisa te perfshihet I gjithe teksti hyres.Eshte metode me e sigurte se EBC sepse sulmuesit nuk mund ti krahasojne ciphertex-et.
+__*Cipher FeedBack*__ eshte nje nga metodat e enkriptimit te ciles i nevojitet nje vektor inicializues(IV) per te kryer procesin e enkriptimit. Së pari, CFB do të enkriptojë IV, pastaj do të xor me bllokun e pare te teksit hyres(plaintext) për të marrë tekstin e enkriptuar. Ky rezultat I enkriptimit behet perseri  xor me bllokun e dyte te plaintext.Kjo mënyrë do te vazhdoje derisa te perfshihet I gjithe teksti hyres.Eshte metode me e sigurte se EBC sepse sulmuesit nuk mund ti krahasojne ciphertex-et. <br/> <br/>
+
+Ne vazhdim jane paraqitur rezultatet e enkriptimit me AES, si dhe formen e implementimit.<br/><br/>
+__*Enkriptimi me gjatesi te celesit 128 bit:*__<br/><br/>
+<img src="Images/128bit_encryption.PNG" width="650">
+<br/> <br/>
+__*Enkriptimi me gjatesi te celesit 192 bit:*__<br/><br/>
+<img src="Images/192bit_encryption.PNG" width="650">
+
+
+<br/> <br/>
+__*Enkriptimi me gjatesi te celesit 256 bit:*__<br/><br/>
+<img src="Images/256bit_encryption.PNG" width="650">
+
+<br/><br/>
+Ne vazhdim jane paraqitur rastet, kur nuk eshte dhene si input gjatesia e celesit e duhur e celesit.<br/><br/>
+
+__*Rasti 1:*__<br/><br/>
+<img src="Images/128bit_encryptionProblem.PNG" width="650">
+<br/> <br/>
+__*Rasti 2:*__<br/><br/>
+<img src="Images/192bit_encryptionProblem.PNG" width="650">
+
+
+<br/> <br/>
+__*Rasti 3:*__<br/><br/>
+<img src="Images/256bit_encryptionProblem.PNG" width="650">
+
+<br/><br/>
+
+## Konkluzion
+Si konkluzion, mund te themi se AES eshte nje algoritem mjaft i perdorur ne ditet e sotme. AES eshte i implementuar ne software dhe hardware ne tere boten, per te enkriptuar dhe mbrojtuar te dhena sensitive. Eshte algoritem esencial per sigurine e kompjutereve te qeverive, cybersecurity dhe mbrojtjen e te dhenave elektronike.
+
+
+
