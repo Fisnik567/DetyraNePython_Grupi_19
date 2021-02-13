@@ -233,6 +233,44 @@ lDisplay22.place(x=200, y=135)
 entry_textCFB22 = Entry(tab2, width=50)
 entry_textCFB22.place(x=300, y=135)
 
+#Tab3 Content
+l111 = Label(tab3, text="Text to be encrypted: ", padx=15, pady=5)
+l111.grid(column=0, row=1)
 
+entry_text111 = Entry(tab3, width=50)
+entry_text111.grid(row=1, column=1)
+
+l222 = Label(tab3, text="Type the secret key(length of 32): ", padx=5, pady=5)
+l222.grid(column=0, row=2)
+
+entry_text222 = Entry(tab3, width=50)
+entry_text222.grid(row=2, column=1)
+
+buttonECB111 = Button(tab3, text="ECB 192-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
+buttonECB111.place(x=50,y=100)
+buttonECB111.bind("<Button-1>", shenoFjalen5)
+buttonECB111.configure(height=1, width=18)
+
+buttonCFB111 = Button(tab3, text="CFB 192-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
+buttonCFB111.place(x=50,y=135)
+buttonCFB111.bind("<Button-1>", shenoFjalen6)
+buttonCFB111.configure(height=1, width=18)
+
+buttonCLEAR111 = Button(tab3, text="Clear", width=12, bg="#03A9F4", fg="#fff")
+buttonCLEAR111.bind("<Button-1>", delete3)
+buttonCLEAR111.place(x=500,y=200)
+
+lDisplay111 = Label(tab3, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay111.place(x=200, y=100)
+
+entry_textECB111 = Entry(tab3, width=50)
+entry_textECB111.place(x=300, y=100)
+
+lDisplay222 = Label(tab3, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay222.place(x=200, y=135)
+
+entry_textCFB222 = Entry(tab3, width=50)
+entry_textCFB222.place(x=300, y=135)
+                
 
 window.mainloop()
