@@ -165,21 +165,6 @@ l2.grid(column=0, row=2)
 entry_text2 = Entry(tab2, width=50)
 entry_text2.grid(row=2, column=1)
 
-button1 = Button(tab2, text="128-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
-button1.grid(row=3, column=0, padx=5, pady=30)
-button1.bind("<Button-1>", shenoFjalen1)
-button1.configure(height=1, width=15)
-
-button2 = Button(tab2, text="Clear", width=12, bg="#03A9F4", fg = "#fff")
-button2.grid(row=3, column=1, padx=5, pady=30)
-
-#Encrypted Text
-
-lDisplay = Label(tab2, text="Encrypted Text: ", padx=5, pady=5)
-lDisplay.grid(column=0, row=4)
-
-entry_text3 = Entry(tab2, width=50)
-entry_text3.grid(row=4, column=1)
 
 lDisplay = Label(tab1, text="Encrypted Text: ", padx=0, pady=0)
 lDisplay.place(x=200, y=135)
