@@ -151,27 +151,49 @@ label2.grid(column=0, row=0)
 label3 = Label(tab3, text="AES Encryption(256-bit key length)", padx=15, pady=5)
 label3.grid(column=0, row=0)
                 
+                
+                
 #Tab1 Content
-l1 = Label(tab2, text="Text to be encrypted: ", padx=15, pady=5)
+l1 = Label(tab1, text="Text to be encrypted: ", padx=15, pady=5)
 l1.grid(column=0, row=1)
 
-# fname_raw_entry = StringVar()
-entry_text1 = Entry(tab2, width=50)
+entry_text1 = Entry(tab1, width=50)
 entry_text1.grid(row=1, column=1)
 
-l2 = Label(tab2, text="Type the secret key: ", padx=5, pady=5)
+l2 = Label(tab1, text="Type the secret key(length of 16): ", padx=5, pady=5)
 l2.grid(column=0, row=2)
-#fname_raw_entry = StringVar()
-entry_text2 = Entry(tab2, width=50)
+
+entry_text2 = Entry(tab1, width=50)
 entry_text2.grid(row=2, column=1)
 
+buttonECB1 = Button(tab1, text="ECB-128-bit Encryption", width=2, bg="#03A9F4", fg = "#fff")
+buttonECB1.place(x=50,y=100)
+buttonECB1.bind("<Button-1>", shenoFjalen1)
+buttonECB1.configure(height=1, width=18)
+
+buttonCFB1 = Button(tab1, text="CFB-128-bit Encryption", width=12, bg="#03A9F4", fg = "#fff")
+buttonCFB1.place(x=50,y=135)
+buttonCFB1.bind("<Button-1>", shenoFjalen2)
+buttonCFB1.configure(height=1, width=18)
+
+buttonCLEAR1 = Button(tab1, text="Clear", width=12, bg="#03A9F4", fg="#fff")
+buttonCLEAR1.bind("<Button-1>", delete1)
+buttonCLEAR1.place(x=500,y=200)
+
+lDisplay = Label(tab1, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay.place(x=200, y=100)
+
+entry_textECB1 = Entry(tab1, width=50)
+entry_textECB1.place(x=300, y=100)
 
 lDisplay = Label(tab1, text="Encrypted Text: ", padx=0, pady=0)
 lDisplay.place(x=200, y=135)
 
 entry_textCFB1 = Entry(tab1, width=50)
 entry_textCFB1.place(x=300, y=135)
-
+                
+                
+                
 #Tab2 Content
 l11 = Label(tab2, text="Text to be encrypted: ", padx=15, pady=5)
 l11.grid(column=0, row=1)
