@@ -60,6 +60,31 @@ def encrypt_aesECB192(sourceStr, key):
         gabim = "Key length should be 24!"
         return gabim    
 
+#Enkriptimi ne CFB MODE(256-bit key length)
+def encrypt_aesCFB256(sourceStr, key):
+    if len(key) == 32:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_CFB, iv)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = "Key length should be 32!"
+        return gabim
+
+#Enkriptimi ne EBC MODE(256-bit key length)
+def encrypt_aesECB256(sourceStr, key):
+    if len(key) == 32:
+        b = bytes(key, 'utf-8')
+        generator = AES.new(b, AES.MODE_ECB)
+        crypt = generator.encrypt(pad_it(sourceStr).encode('utf-8'))
+        cryptedStr = base64.b64encode(crypt)
+        return cryptedStr
+    else:
+        gabim = "Key length should be 32!"
+        return gabim
+    
+
 def shenoFjalen1(event):
     entry_3.insert(0, encrypt_aes(entry_1.get(), entry_2.get()))
 
