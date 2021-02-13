@@ -214,5 +214,18 @@ buttonCLEAR11 = Button(tab2, text="Clear", width=12, bg="#03A9F4", fg="#fff")
 buttonCLEAR11.bind("<Button-1>", delete2)
 buttonCLEAR11.place(x=500,y=200)
 
+lDisplay11 = Label(tab2, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay11.place(x=200, y=100)
+
+entry_textECB11 = Entry(tab2, width=50)
+entry_textECB11.place(x=300, y=100)
+
+lDisplay22 = Label(tab2, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay22.place(x=200, y=135)
+
+entry_textCFB22 = Entry(tab2, width=50)
+entry_textCFB22.place(x=300, y=135)
+
+
 
 window.mainloop()
