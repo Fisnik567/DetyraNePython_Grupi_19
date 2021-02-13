@@ -86,10 +86,40 @@ def encrypt_aesECB256(sourceStr, key):
     
 
 def shenoFjalen1(event):
-    entry_3.insert(0, encrypt_aes(entry_1.get(), entry_2.get()))
-
+    entry_textECB1.insert(0, encrypt_aesECB128(entry_text1.get(), entry_text2.get()))
+    
 def shenoFjalen2(event):
-    entry_3.insert(0, "Encrypted Text with 192-bit key")
+    entry_textCFB1.insert(0, encrypt_aesCFB128(entry_text1.get(), entry_text2.get()))
+    
+def shenoFjalen3(event):
+    entry_textECB11.insert(0, encrypt_aesECB192(entry_text11.get(), entry_text22.get()))
+
+def shenoFjalen4(event):
+    entry_textCFB22.insert(0, encrypt_aesCFB192(entry_text11.get(), entry_text22.get()))
+
+def shenoFjalen5(event):
+    entry_textECB111.insert(0, encrypt_aesECB256(entry_text111.get(), entry_text222.get()))
+
+def shenoFjalen6(event):
+    entry_textCFB222.insert(0, encrypt_aesCFB256(entry_text111.get(), entry_text222.get()))
+
+def delete1(event):
+    entry_text1.delete(0, 'end')
+    entry_text2.delete(0, 'end')
+    entry_textECB1.delete(0, 'end')
+    entry_textCFB1.delete(0, 'end')
+
+def delete2(event):
+    entry_text11.delete(0, 'end')
+    entry_text22.delete(0, 'end')
+    entry_textECB11.delete(0, 'end')
+    entry_textCFB22.delete(0, 'end')
+
+def delete3(event):
+    entry_text111.delete(0, 'end')
+    entry_text222.delete(0, 'end')
+    entry_textECB111.delete(0, 'end')
+    entry_textCFB222.delete(0, 'end')
 
 
 style = ttk.Style(window)
