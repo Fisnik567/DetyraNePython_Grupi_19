@@ -134,21 +134,24 @@ tab1 = ttk.Frame(tab_control)
 tab2 = ttk.Frame(tab_control)
 tab3 = ttk.Frame(tab_control)
 
-tab_control.add(tab1, text=f'{"CFB 192-bit encryption":^20s}')
-tab_control.add(tab2, text=f'{"CFB 128-bit encryption":^20s}')
-tab_control.add(tab3, text=f'{"CFB 256-bit encryption":^20s}')
+tab_control.add(tab1, text=f'{"AES 192-bit encryption":^20s}')
+tab_control.add(tab2, text=f'{"AES 128-bit encryption":^20s}')
+tab_control.add(tab3, text=f'{"AES 256-bit encryption":^20s}')
 
 tab_control.pack(expand=1, fill="both")
 
 
 
-label1 = Label(tab2, text="CFB Mode Aes Encryption", padx=15, pady=5)
+label1 = Label(tab2, text="AES Encryption(128-bit key length)", padx=15, pady=5)
 label1.grid(column=0, row=0)
 
-label2 = Label(tab1, text="EBC Mode Aes Encryption", padx=5, pady=5)
+label2 = Label(tab1, text="AES Encryption(192-bit key length)", padx=5, pady=5)
 label2.grid(column=0, row=0)
+
+label3 = Label(tab3, text="AES Encryption(256-bit key length)", padx=15, pady=5)
+label3.grid(column=0, row=0)
                 
-#CFB MODE
+#Tab1 Content
 l1 = Label(tab2, text="Text to be encrypted: ", padx=15, pady=5)
 l1.grid(column=0, row=1)
 
@@ -158,7 +161,7 @@ entry_text1.grid(row=1, column=1)
 
 l2 = Label(tab2, text="Type the secret key: ", padx=5, pady=5)
 l2.grid(column=0, row=2)
-fname_raw_entry = StringVar()
+#fname_raw_entry = StringVar()
 entry_text2 = Entry(tab2, width=50)
 entry_text2.grid(row=2, column=1)
 
@@ -177,6 +180,26 @@ lDisplay.grid(column=0, row=4)
 
 entry_text3 = Entry(tab2, width=50)
 entry_text3.grid(row=4, column=1)
+
+lDisplay = Label(tab1, text="Encrypted Text: ", padx=0, pady=0)
+lDisplay.place(x=200, y=135)
+
+entry_textCFB1 = Entry(tab1, width=50)
+entry_textCFB1.place(x=300, y=135)
+
+#Tab2 Content
+l11 = Label(tab2, text="Text to be encrypted: ", padx=15, pady=5)
+l11.grid(column=0, row=1)
+
+entry_text11 = Entry(tab2, width=50)
+entry_text11.grid(row=1, column=1)
+
+l22 = Label(tab2, text="Type the secret key(length of 24): ", padx=5, pady=5)
+l22.grid(column=0, row=2)
+
+entry_text22 = Entry(tab2, width=50)
+entry_text22.grid(row=2, column=1)
+
 
 
 window.mainloop()
